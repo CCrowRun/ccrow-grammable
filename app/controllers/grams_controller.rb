@@ -19,6 +19,13 @@ class GramsController < ApplicationController
     end
   end
 
+  def show
+   @gram = Gram.find_by_id(params[:id])
+   if @gram.blank?
+    render :file => "#{Rails.root}/public/404.html",  layout: false, status: :not_found
+   end
+  end
+
   private
 
   def gram_params
