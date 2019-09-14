@@ -9,6 +9,7 @@ class GramsController < ApplicationController
 
   def create
     @gram = Gram.create(gram_params)
+    return head(:unprocessable_entity) if @gram.invalid?
     redirect_to root_path
   end
 
