@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.3'
@@ -76,3 +76,6 @@ end
 
 gem 'simple_form'
 gem 'devise'
+gem 'carrierwave', '~> 1.0'
+gem 'figaro'
+gem 'fog-aws'
