@@ -10,8 +10,6 @@ class GramsController < ApplicationController
 
   def create
     @gram = current_user.grams.create(gram_params)
-    # # return head(:unprocessable_entity) if @gram.invalid?
-    # redirect_to root_path
     if @gram.valid?
       redirect_to root_path
     else
@@ -21,14 +19,32 @@ class GramsController < ApplicationController
 
   def show
    @gram = Gram.find_by_id(params[:id])
-   if @gram.blank?
-    render :file => "#{Rails.root}/public/404.html",  layout: false, status: :not_found
-   end
+   return render_not_found if @gram.blank?
+  end
+
+  def edit
+    @gram = Gram.find_by_id(params[:id])
+    return render_not_found if @gram.blank?
+  end
+
+  def update
+    @gram = Gram.find_by_id(params[:id])
+    return render_not_found if @gram.blank?
+    @gram.update_attributes(gram_params)
+    if @gram.valid?
+      redirect_to root_path
+    else
+      return render :edit, status: :unprocessable_entity
+    end
   end
 
   private
 
   def gram_params
     params.require(:gram).permit(:message)
+  end
+
+  def render_not_found
+    render :file => "#{Rails.root}/public/404.html",  layout: false, status: :not_found
   end
 end
