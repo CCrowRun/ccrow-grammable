@@ -18,13 +18,13 @@ As an authenticated user, I want to:
 
 
 ## High Level Specs
-Nomster is a Ruby on Rails application, with a database is managed by Postgres
+Grammable is a Ruby on Rails application, with a database is managed by PostgreSQL
 * Rails v. 5.2.3
 * Ruby v. 2.5.3
 
 ### Integrations Used
 
-The following gems support Nomster's functionality:
+The following gems support Grammable's functionality:
 * Devise, for user authentication
 * RSpec and FactoryBot, for testing
 * Figaro, for controlling environment variables
