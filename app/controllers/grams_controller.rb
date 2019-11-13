@@ -43,8 +43,8 @@ class GramsController < ApplicationController
 
 private
   def load_gram
-    @gram = Gram.find_by_id(params[:id])
-  end
+    @gram = Gram.find_by(id: params[:id])
+    #Gram.find_by!(id: params[:id])
 
   def gram_params
     params.require(:gram).permit(:message, :picture)
