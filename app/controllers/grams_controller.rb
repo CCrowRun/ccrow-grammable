@@ -45,6 +45,7 @@ private
   def load_gram
     @gram = Gram.find_by(id: params[:id])
     #Gram.find_by!(id: params[:id])
+  end
 
   def gram_params
     params.require(:gram).permit(:message, :picture)
