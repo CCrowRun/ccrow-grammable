@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class Gram < ApplicationRecord
   validates :message, presence: true
   validates :picture, presence: true

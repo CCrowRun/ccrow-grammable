@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class GramsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :load_gram, only: [:show, :edit, :update, :destroy]

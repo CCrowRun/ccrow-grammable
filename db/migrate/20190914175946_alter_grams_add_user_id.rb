@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class AlterGramsAddUserId < ActiveRecord::Migration[5.2]
   def change
     add_column :grams, :user_id, :integer
