@@ -80,4 +80,5 @@ gem 'devise'
 gem 'figaro'
 gem 'fog-aws'
 gem 'rubocop', '~> 0.76.0', require: false
+gem 'rubocop-rails'
 gem 'simple_form'
